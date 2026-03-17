@@ -22,3 +22,8 @@ El proyecto se basa en una arquitectura de "Defensa en Profundidad", integrando:
 * **/docs**: Informe técnico, justificación de decisiones y diagramas.
 * **/configs**: Archivos de configuración de los dispositivos de red.
 * **/captures**: Capturas y análisis de tráfico (Wireshark).
+
+## 4. Organización del Equipo y Herramientas
+* **Gestión de Configuración:** Utilizamos la carpeta `/configs` para mantener versiones actualizadas de los archivos de configuración de routers y firewalls.
+* **Documentación Técnica:** Centralizada en la carpeta `/docs` mediante archivos Markdown para facilitar la revisión y el trabajo colaborativo.
+* **Monitorización y Pruebas:** El análisis de vulnerabilidades y el tráfico de red se registrará en la carpeta `/captures` utilizando Wireshark.
