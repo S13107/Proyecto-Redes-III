@@ -13,10 +13,10 @@ Para asegurar el éxito del proyecto, el equipo se ha organizado en las siguient
 
 ## 2. Propuesta Tecnológica
 El proyecto se basa en una arquitectura de "Defensa en Profundidad", integrando:
-* **Segmentación estricta:** Aislamiento de tráfico sensible mediante VLANs.
-* **Zona Desmilitarizada (DMZ):** Ubicación segura para servicios web, protegida por firewalls de aplicación.
-* **SD-WAN:** Optimización del rendimiento y reducción de costes en la conectividad entre sedes.
-* **Acceso Remoto Seguro:** Túneles VPN para garantizar la confidencialidad de los trabajadores externos.
+* **Segmentación estricta:** Aislamiento de tráfico sensible mediante VLANs. Para una segmentar la red en diferentes subredes, lo que permite aislar el trafico según su funcion  (usuarios, servidores, administración, etc.). Esto mejora la seguridad, ya que limita la propagación de posibles ataques dentro de la red.
+* **Zona Desmilitarizada (DMZ):** Ubicación segura para servicios web desde el exterior, protegida por firewalls de aplicación y evitando el acceso directo a la red interna.
+* **SD-WAN:** Optimización del rendimiento y reducción de costes en la conectividad entre diferente sedes y usuarios remotosPermite gestionar de forma más eficiente el ancho de banda. Ademas de facilitar la escalabilidad de la red.
+* **Acceso Remoto Seguro:** Túneles VPN para garantizar la confidencialidad de la comunicacion de los trabajadores externos.
 
 ## 3. Estructura del Repositorio
 * **/docs**: Informe técnico, justificación de decisiones y diagramas.
