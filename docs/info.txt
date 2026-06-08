@@ -1,1 +1,46 @@
-Info
+# Información del Proyecto - NexusPlay Studios
+
+## Datos del proyecto
+
+- **Asignatura:** Redes III
+- **Empresa simulada:** NexusPlay Studios
+- **Sector:** Desarrollo de videojuegos y esports
+- **Herramienta:** GNS3 con GNS3 VM
+
+## Descripción de la empresa
+
+NexusPlay Studios es una empresa de desarrollo de videojuegos y competición esports con:
+- **Sede central:** Barcelona — 40 empleados, servidores de producción
+- **Sucursal:** Madrid — 15 empleados, equipo de esports y marketing
+- **Trabajadores remotos:** Programadores y diseñadores freelance con acceso VPN
+
+## Tecnologías implementadas
+
+| Tecnología | Herramienta | Estado |
+|------------|-------------|--------|
+| Firewall perimetral | MikroTik CHR (FW1) |  Implementado |
+| Firewall interno | MikroTik CHR (FW2) |  Implementado |
+| DMZ | Zona aislada con Web-Server y Mail-Server |  Implementado |
+| NAT | Masquerade en FW1 |  Implementado |
+| VPN | L2TP/IPSec en FW1 |  Implementado |
+| Routing | Rutas estáticas entre zonas |  Implementado |
+| Análisis de tráfico | Wireshark |  Implementado |
+
+## Estructura del repositorio
+
+```
+/
+├── README.md           # Descripción general del proyecto
+├── docs/
+│   ├── topologia.md    # Definición de la topología y direccionamiento
+│   ├── investigacion.md # Investigación sobre seguridad en redes
+│   └── info.txt        # Este archivo
+├── configs/
+│   ├── FW1-Config.txt  # Configuración exportada de MikroTik FW1
+│   ├── FW2-Config.txt  # Configuración exportada de MikroTik FW2
+│   ├── Router-ISP-Config.txt # Configuración del Router ISP (Cisco IOSv2)
+│   └── ip-addresses.md # Tabla de direccionamiento IP completa
+└── captures/
+    ├── captura-LAN-DMZ.pcap       # Tráfico legítimo LAN → DMZ
+    └── captura-DMZ-bloqueada.pcap # Tráfico bloqueado DMZ → LAN
+```
