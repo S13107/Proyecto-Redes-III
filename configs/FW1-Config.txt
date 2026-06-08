@@ -1,0 +1,39 @@
+[admin@MikroTik] > export
+# 2026-06-08 09:55:06 by RouterOS 7.20.8
+# system id = zh/awf/UL/H
+#
+/interface bridge
+add name=loopback
+/interface ethernet
+set [ find default-name=ether1 ] disable-running-check=no
+set [ find default-name=ether2 ] disable-running-check=no
+set [ find default-name=ether3 ] disable-running-check=no
+set [ find default-name=ether4 ] disable-running-check=no
+set [ find default-name=ether5 ] disable-running-check=no
+set [ find default-name=ether6 ] disable-running-check=no
+set [ find default-name=ether7 ] disable-running-check=no
+set [ find default-name=ether8 ] disable-running-check=no
+/port
+set 0 name=serial0
+/interface l2tp-server server
+set enabled=yes use-ipsec=yes
+/ip address
+add address=10.10.10.1/24 interface=ether2 network=10.10.10.0
+add address=203.0.113.2/24 interface=ether1 network=203.0.113.0
+add address=10.20.0.1/24 interface=loopback network=10.20.0.0
+add address=10.20.0.1/24 interface=lo network=10.20.0.0
+/ip dhcp-client
+add interface=ether1
+/ip firewall filter
+add action=accept chain=forward connection-state=established,related
+add action=accept chain=forward dst-address=10.10.10.0/24 dst-port=80 protocol=tcp
+add action=accept chain=forward dst-address=10.10.10.0/24 dst-port=443 protocol=tcp
+add action=accept chain=forward dst-address=10.10.10.0/24 dst-port=53 protocol=udp
+add action=drop chain=forward dst-address=10.10.10.0/24
+/ip firewall nat
+add action=masquerade chain=srcnat out-interface=ether1
+/ip route
+add dst-address=192.168.100.0/24 gateway=10.10.10.2
+add dst-address=0.0.0.0/0 gateway=203.0.113.1
+/ppp secret
+add local-address=10.20.0.1 name=vpnuser remote-address=10.20.0.2 service=l2tp

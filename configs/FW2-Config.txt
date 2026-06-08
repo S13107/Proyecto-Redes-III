@@ -1,0 +1,31 @@
+
+[admin@MikroTik] > export
+# 2026-06-08 09:56:14 by RouterOS 7.20.8
+# system id = 3d1UF7KY97G
+#
+/interface ethernet
+set [ find default-name=ether1 ] disable-running-check=no
+set [ find default-name=ether2 ] disable-running-check=no
+set [ find default-name=ether3 ] disable-running-check=no
+set [ find default-name=ether4 ] disable-running-check=no
+set [ find default-name=ether5 ] disable-running-check=no
+set [ find default-name=ether6 ] disable-running-check=no
+set [ find default-name=ether7 ] disable-running-check=no
+set [ find default-name=ether8 ] disable-running-check=no
+/port
+set 0 name=serial0
+/ip address
+add address=10.10.10.2/24 interface=ether1 network=10.10.10.0
+add address=192.168.100.1/24 interface=ether2 network=192.168.100.0
+/ip dhcp-client
+add interface=ether1
+/ip firewall filter
+add action=accept chain=forward connection-state=established,related
+add action=accept chain=forward dst-address=10.10.10.0/24 src-address=192.168.100.0/24
+add action=accept chain=forward src-address=192.168.100.0/24
+add action=drop chain=forward dst-address=192.168.100.0/24 src-address=10.10.10.0/24
+add action=drop chain=forward
+/ip route
+add dst-address=10.10.10.0/24 gateway=10.10.10.1
+add dst-address=0.0.0.0/0 gateway=10.10.10.1
+[admin@MikroTik] >
