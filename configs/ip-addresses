@@ -1,0 +1,22 @@
+## Direccionamiento IP - NexusPlay Studios
+
+### Firewalls
+- FW1 ether1 (WAN):  203.0.113.2/24
+- FW1 ether2 (DMZ):  10.10.10.1/24
+- FW2 ether1 (DMZ):  10.10.10.2/24
+- FW2 ether2 (LAN):  192.168.100.1/24
+
+### DMZ
+- Web-Server:   10.10.10.10/24
+- Mail-Server:  10.10.10.20/24
+
+### Red Interna LAN
+- PC-Desarrollo:  192.168.100.10/24
+- PC-Esports:     192.168.100.20/24
+- PC-Admin:       192.168.100.30/24
+- PC-RRHH:        192.168.100.40/24
+- PC-Direccion:   192.168.100.50/24
+
+### Internet/WAN
+- Router-ISP g0/0: 192.168.1.2/24
+- Router-ISP g0/1: 203.0.113.1/24
