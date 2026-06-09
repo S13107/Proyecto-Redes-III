@@ -20,3 +20,10 @@
 ### Internet/WAN
 - Router-ISP g0/0: 192.168.1.2/24
 - Router-ISP g0/1: 203.0.113.1/24
+
+### Sede Madrid
+- Router-Madrid ether9 (LAN): 192.168.200.1/24
+- Router-Madrid ether10 (P2P): 10.10.30.2/30
+- NX-Edge ether3 (P2P): 10.10.30.1/30
+- PC-Madrid1: 192.168.200.10/24
+- PC-Madrid2: 192.168.200.20/24
