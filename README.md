@@ -1,8 +1,8 @@
 # Proyecto de Redes III - NexusPlay Studios
 
- Diseño e implementación de una infraestructura de red segura para una empresa de desarrollo de videojuegos y esports con dos sedes y trabajadores remotos.
+> Diseño e implementación de una infraestructura de red segura para una empresa de desarrollo de videojuegos y esports con dos sedes y trabajadores remotos.
 
-## Contexto de la Empresa
+##  Contexto de la Empresa
 
 **NexusPlay Studios** es una empresa de desarrollo de videojuegos y competición esports con presencia en dos ciudades:
 
@@ -12,7 +12,7 @@
 
 La empresa gestiona una **tienda online**, **servidores de juego públicos** y organiza **torneos presenciales**, lo que la convierte en un objetivo habitual de ataques DDoS y requiere una infraestructura de red robusta y segmentada.
 
------
+---
 
 ## 1. Organización y Metodología
 
